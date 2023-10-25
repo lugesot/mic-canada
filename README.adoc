@@ -1,0 +1,31 @@
+== edit your host
+127.0.0.1       usa.mic.com
+127.0.0.1       canada.mic.com
+
+== how run
+yarn dev
+browse http://usa.mic.com
+
+== http & port
+Make sure use default 80 to jump different Domains successfully.
+Make sure you use http instead of https.
+
+== locale trick
+Use just three locales of `en-US, en, fr` mapping standard ones as: en-US, en-CA, fr-CA
+The regions accordingly are the USA, Canada and Canada.
+However the Nextjs framework identify your locale by the domain and prefix. Please try these urls below to feel:
+http://usa.mic.com
+http://usa.mic.com/en-US
+http://canada.mic.com
+http://canada.mic.com/en
+http://canada.mic.com/fr
+
+== out of scope
+Although http://usa.mic.com/en work, it should be redirected to http://usa.mic.com in the product environment.
+The same http://usa.mic.ca redirects to http://canada.mic.com, http://usa.mic.ca/fr to http://canada.mic.com/fr.
+Else they will confuse us and make troubles.
+
+== 307 problem
+Check your prefix and default locale, e.g.: domain.com --> domain.com/fr
+Else use middleware custom your prefix the default locale
+
