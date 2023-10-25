@@ -4,6 +4,7 @@
 127.0.0.1       canada.mic.com
 
 == how run
+yarn
 yarn dev
 browse http://usa.mic.com
 
